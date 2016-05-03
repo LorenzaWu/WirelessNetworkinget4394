@@ -1,3 +1,6 @@
+#Scenario 3. Final output on GNUPLOT Mixed_basic_avg.png,Mixed_basic_mob.png,throughputvsNodes(Static).png
+
+
 >mixed_basic_avg_arf.dat
 >mixed_basic_avg_aarf.dat
 >mixed_basic_avg_aarfcd.dat
