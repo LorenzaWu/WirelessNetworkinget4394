@@ -1,3 +1,6 @@
+#Scenario 3. Final output on GNUPLOT Mixed_rts_avg.png,Mixed_rts_mob.png,Mixed_rts_static.png.png
+
+
 >mixed_rts_avg_arf.dat
 >mixed_rts_avg_aarf.dat
 >mixed_rts_avg_aarfcd.dat
