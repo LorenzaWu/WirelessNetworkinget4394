@@ -1,6 +1,7 @@
 #Scenario 3. Final output on GNUPLOT Mixed_rts_avg.png,Mixed_rts_mob.png,Mixed_rts_static.png.png
-
-
+>avg.dat
+>mob.dat
+>sta.dat
 >mixed_rts_avg_arf.dat
 >mixed_rts_avg_aarf.dat
 >mixed_rts_avg_aarfcd.dat
@@ -106,8 +107,3 @@ set ylabel "Static Node Throughput (Mbps)"
 set output "Mixed_rts_static.png"
 plot 'mixed_rts_final_sta_arf.dat' w l lc rgb 'black' title "ARF",'mixed_rts_final_sta_aarf.dat' w l lc rgb 'red' title "AARF",'mixed_rts_final_sta_aarfcd.dat' w l lc rgb 'green' title "AARF-CD"
 EOF
-
-
-
-
-
