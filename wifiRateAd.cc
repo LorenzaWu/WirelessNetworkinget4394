@@ -484,8 +484,7 @@ main (int argc, char *argv[])
     std::cout << nWifi802_11b <<" "<<throughput<<'\n';
    }
   
-  Simulator::Destroy ();
-
+  Simulator::Destroy ();      //Destroy all simulation variables and free up memory.
 
   return 0;
 }
