@@ -1,3 +1,5 @@
+# Scenario 2 Multi User . Final output on GNUPLOT throughputvsNodes.png
+
 rm -f output_file_arf.dat
 rm -f output_file_aarf.dat
 rm -f output_file_aarfcd.dat
