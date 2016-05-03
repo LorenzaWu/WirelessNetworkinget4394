@@ -21,8 +21,8 @@
   (By Matías Richart <mrichart@fing.edu.uy>)
  *
  * Example usage:
- * To execute a simulation with 4 nodes, Fixed RSS propagation model, MultiUser scenario(Scenario 3) , RTS CTS Enabled and ARF Wifi Manager
- * ./waf --run "scratch/wifiTest --nWifi802_11b=4 --rtscts=y --propModel=fixed --scenario=multi --wifiMgr=arf"
+ * To execute a simulation with 4 nodes, Fixed RSS propagation model, MultiUser scenario(Scenario 2) , RTS CTS Enabled and ARF Wifi Manager
+ * ./waf --run "scratch/wifiRateAd --nWifi802_11b=4 --rtscts=y --propModel=fixed --scenario=multi --wifiMgr=arf"
  *
  * Possible options for command line arguments are mentioned in Lines 177-181
  */
