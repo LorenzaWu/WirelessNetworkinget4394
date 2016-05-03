@@ -24,7 +24,7 @@
  * To execute a simulation with 4 nodes, Fixed RSS propagation model, MultiUser scenario(Scenario 2) , RTS CTS Enabled and ARF Wifi Manager
  * ./waf --run "scratch/wifiRateAd --nWifi802_11b=4 --rtscts=y --propModel=fixed --scenario=multi --wifiMgr=arf"
  *
- * Possible options for command line arguments are mentioned in Lines 177-181
+ * Possible options for command line arguments are mentioned in Lines 170-176
  */
 
 #include "ns3/core-module.h"
@@ -168,11 +168,11 @@ main (int argc, char *argv[])
  
 
   CommandLine cmd;
-  cmd.AddValue ("nWifi802_11b", "Total Number of 802.11b STA devices", nWifi802_11b); 
-  cmd.AddValue ("propModel", "Propagation Loss Model To : 'Random' for Random loss model, 'Log' for log distance ", propModel);
+  cmd.AddValue ("nWifi802_11b", "Total Number of 802.11b STA devices (18 by Default)", nWifi802_11b); 
+  cmd.AddValue ("propModel", "Propagation Loss Model To : 'Random' for Random loss model, 'Log' for log distance. By default 'Fixed RSS' is enabled  " propModel);
   cmd.AddValue ("wifiMgr","Type of Rate Adaptation to use: 'constant(default)','aarf','arf'", wifiMgr);
   cmd.AddValue ("rtscts","Enter y (Default) to enable RTSCTS else n",rtscts);
-  cmd.AddValue ("scenario","Type of Scenario: single, multi or mixed",scenario);
+  cmd.AddValue ("scenario","Type of Scenario: single, multi(Default) or mixed",scenario);
   cmd.AddValue ("verbose", "Enable Wifi logging if true", verbose);
 
   cmd.Parse (argc,argv);        
@@ -207,12 +207,12 @@ main (int argc, char *argv[])
   rtsCtsThresh = 200;
  
 
- if (propModel == "Log") 
+ if (propModel == "Log")    // Log Distance Propagation Loss
  {
   channel.AddPropagationLoss ("ns3::LogDistancePropagationLossModel","ReferenceLoss",DoubleValue(40.04));
  }
 
- else
+ else                      // Fixed RSS Loss Model
  {
   channel.AddPropagationLoss ("ns3::FixedRssLossModel","Rss",DoubleValue(rss));
  }
@@ -223,7 +223,7 @@ main (int argc, char *argv[])
 
   phy.SetPcapDataLinkType (YansWifiPhyHelper::DLT_IEEE802_11_RADIO); 
   
-  phy.SetErrorRateModel	("ns3::YansErrorRateModel");
+  phy.SetErrorRateModel	("ns3::YansErrorRateModel");    // Error Rate Model(To incorporate channel loss due to poor SNR,when log model is used)
 
   phy.SetChannel (channel.Create ());
 
