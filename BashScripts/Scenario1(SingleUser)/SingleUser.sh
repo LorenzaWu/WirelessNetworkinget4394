@@ -1,3 +1,6 @@
+# For Scenario 1, 6 simulation runs. Final ouput is throughputvsDistance(SingleUser).png on GNUPLOT.
+
+
 rm -f throughput_single_userarf.dat
 rm -f throughput_single_useraarf.dat
 rm -f throughput_single_useraarfcd.dat
